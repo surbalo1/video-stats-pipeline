@@ -37,11 +37,18 @@ flowchart LR
 ```bash
 python -m pipeline.sample_data   # builds a demo DB in memory and prints the gold views
 pip install pytest && python -m pytest -q
+
+# Optional: export the gold layer to Parquet and query it with DuckDB
+pip install duckdb
+python -m pipeline.export out/   # writes out/<gold_view>.parquet and runs a sample query
 ```
+
+The core pipeline stays standard-library only. DuckDB is optional: without it the
+Parquet tests are skipped.
 
 ## Roadmap
 
-- [ ] DuckDB + Parquet backend
+- [x] Gold layer exported to Parquet, queried with DuckDB
 - [ ] dbt-style SQL models
 - [ ] Orchestration (Dagster or Airflow)
 - [ ] Incremental loads instead of full reload

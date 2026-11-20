@@ -4,5 +4,8 @@ version = "0.1.0"
 description = "Bronze/silver/gold pipeline for short-video stats in plain SQLite"
 requires-python = ">=3.10"
 
+[project.optional-dependencies]
+parquet = ["duckdb>=1.1"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
