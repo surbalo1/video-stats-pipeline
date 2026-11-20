@@ -1,0 +1,8 @@
+[project]
+name = "video-stats-pipeline"
+version = "0.1.0"
+description = "Bronze/silver/gold pipeline for short-video stats in plain SQLite"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
